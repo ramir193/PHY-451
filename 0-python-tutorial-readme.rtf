@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww14500\viewh16180\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1. pulse NMR\
+\
+T2 data\
+col0 = amplitude\
+col1 = time\
+col2 = width\
+col3 = residual \
+\
+- plot col0 vs. col1\
+- assume 5% uncertainty for col0 and none for col1\
+- fit to exponential decay\
+- get time constant and uncertainty\
+\
+2. superconductivity/oscope\
+\
+CSV = time in seconds, voltage in volts\
+ch1 file = volts out of FG = (current through R)*(5000 ohms) \
+ch2 file = volts out of preamp = (voltage across R)*(-1000)\
+\
+- plot voltage across R vs. current across R\
+- assume 2% uncertainty for both the voltage and current across R\
+- fit to line\
+- get resistance R (should be about 1 ohm) and offset (should be 0) and uncertainties\
+\
+3.  superfluidity - fluke\
+\
+heat capacity data\
+col0 = time in seconds\
+col1 = resistance in ohms\
+col2 = temperature in Kelvin\
+\
+- plot time (vertical) vs. temperature (horizontal)  (t vs. T)\
+- smooth/bin the t vs. T data\
+- perform a numerical derivative and plot dt/dT vs. T \
+- determine the location of the discontinuity in the dt/dT vs. T plot as well as the uncertainty\
+\
+4. superfluidity - lockin\
+\
+speed of sound data\
+CSV \
+col0 = resistance in ohms\
+col1 = frequency in Hz\
+col2 = channel X voltage\
+col3 = channel Y voltage\
+col4 = channel R voltage (R = sqrt(x^2+y^2))\
+\
+- plot R vs frequency\
+- cut data into peaks\
+- assume 5% uncertainty for col1 and none for col4\
+- fit peaks to gaussian and/or lorentzian\
+- determine spacing between peaks and uncertainty\
+\
+5. optical pumping \
+\
+2 voltage 2 channel data\
+col0 = date stamp\
+col1 = timestamp\
+col2 = time in seconds\
+col3 = sweep voltage\
+col4 = photodiode signal in volts\
+\
+- plot col4 vs. col1\
+- assume 5% uncertainty for both the columns\
+- fit peaks to gaussian and/or lorentzian\
+- determine spacing between peaks 1 and 2 from the zero field dip as well as uncertainties\
+\
+6. nuclear physics\
+\
+gamma ray data from multichannel analyzer\
+col0 = energy in arg units (channel number)\
+col1 = counts\
+\
+- plot col1 vs col0\
+- uncertainty in col1 is just the square root of number of counts\
+- fit photopeak to gaussian and/or lorentzian\
+- determine location of photopeak as well as area under photo peak\
+\
+\
+\
+}

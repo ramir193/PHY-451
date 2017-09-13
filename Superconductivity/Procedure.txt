@@ -1,0 +1,65 @@
+Fabricating SIN junction
+1. Loading the sample
+-Unscrew the bottom ("base") of the chamber, where the sample will be loaded.
+-Loosen the contacts with a 3 mm hex wrench
+-Load the Al boat on the side of the shield labeled "Al" and the Pb(Bi) boat on the other side.
+-Tighten the contacts so the boats are secure.
+-Check that the boats are aligned so the holes of the shield is above the boat. 
+-Place 1 Al pellet and ~2 pellets Pb(Bi) to their respective boats.
+
+2. Placing the junction plate
+-Place the "target" in the mask then screw it tight. 
+-Insert the "Tommy" into the chamber.
+-Set mask to Al setting, 4mm, clamping it down until it no longer shifts
+-Pull off top and ensure that the target is aligned vertically and that the shield is covering both
+of the slots of the plate.
+
+3. Pumpdown to desired pressure
+-Important: Make sure water is on!
+-Make sure coarse and fine knob on right side of chamber are closed
+-Pump down using turbo pump until ~10^(-3) Torr* look this up
+
+4. Al Evaporation
+-Attach the current leads to the Al and ground post.
+-Apply current to Aluminum 
+-Wait until Aluminum boils & evaporates
+-Turn the shield knob clockwise to open slot and expose target to Aluminum vapor
+-
+-Turn the current source off!!
+-Remove current leads onto Pb. 
+-Adjust the slide to 46 mm (Pb pads)
+-Turn current source on
+-Turn the shield knob to expose target to vapor
+-Evaporate until the contact pads reach the desired thickness
+-Turn the knob back to line up with the black mark
+-Turn the current source off
+
+5. Oxidation
+-Change mask to Oxidation setting, at 18 mm.
+-Close blue knobs of the tank
+-Open the gray tank valve
+-Verify that green valve is closed
+-Open the knob between flask and the chambers to "bleed" / evacuate line
+-Open tall bleu knob slowly to desired pressure [20 psi]
+-Slowly open short blue knob to bleed line
+-Close short blue knob
+-Open green valve
+-Slowly repressurize chamber using short blue knob until desired pressure []?
+-Close blue knob
+-Wait 5 minutes for sample to oxidize
+-Close the knob between flask and the chambers.
+-Close green valve
+-Turn on the coarse pump
+-Pump back until some pressure [10^(-7) Pa]??? [1+ hour]
+-Verify coarse and fine knob are closed
+
+6. Pb evaportaion
+-Set mask to 32 mm, the opposite swastika.
+-Turn current source back on.
+-Turn shield knob counterclockwise to expose target to Pb vapor
+-Evaporate Pb until desired thickness is reached on the thickness monitor
+-Close shield; align with the black line
+-Turn off current source
+
+7. Repressurize
+-Turn fine yellow knob on right side of chamber counterclockwise
