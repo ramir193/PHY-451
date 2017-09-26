@@ -17,14 +17,16 @@ of the slots of the plate.
 3. Pumpdown to desired pressure
 -Important: Make sure water is on!
 -Make sure coarse and fine knob on right side of chamber are closed
--Pump down using turbo pump until ~10^(-3) Torr* look this up
+-Pump down using turbo pump until ~10^(-5) mbar [1.25-1.5 hours]
 
 4. Al Evaporation
 -Attach the current leads to the Al and ground post.
 -Apply current to Aluminum 
+-Zero Thickness Monitor before opening slot
 -Wait until Aluminum boils & evaporates
 -Turn the shield knob clockwise to open slot and expose target to Aluminum vapor
--
+-Control current, make sure it doesn't exceed 80? A so the boat doesn't melt
+--From our first trial, we found that 40-50 A was a sweet spot
 -Turn the current source off!!
 -Remove current leads onto Pb. 
 -Adjust the slide to 46 mm (Pb pads)
@@ -40,24 +42,25 @@ of the slots of the plate.
 -Open the gray tank valve
 -Verify that green valve is closed
 -Open the knob between flask and the chambers to "bleed" / evacuate line
--Open tall bleu knob slowly to desired pressure [20 psi]
+-Open tall bleu knob slowly to desired pressure in line [20 psi]
 -Slowly open short blue knob to bleed line
 -Close short blue knob
 -Open green valve
--Slowly repressurize chamber using short blue knob until desired pressure []?
+-Slowly repressurize chamber using short blue knob until desired pressure 150 mbar = 0.15 bar
+NOTE: Pressure valve must read -0.85 b  ar (1 atm = 1 bar; valve reads difference in absolute and atm)
 -Close blue knob
--Wait 5 minutes for sample to oxidize
+-Wait 15-20 minutes for sample to oxidize
 -Close the knob between flask and the chambers.
 -Close green valve
 -Turn on the coarse pump
--Pump back until some pressure [10^(-7) Pa]??? [1+ hour]
+-Pump back until some pressure [~10^(-5) mbar]??? [5-10 minutes]
 -Verify coarse and fine knob are closed
 
 6. Pb evaportaion
 -Set mask to 32 mm, the opposite swastika.
 -Turn current source back on.
 -Turn shield knob counterclockwise to expose target to Pb vapor
--Evaporate Pb until desired thickness is reached on the thickness monitor
+-Evaporate Pb until desired thickness of 150 nm is reached on the thickness monitor
 -Close shield; align with the black line
 -Turn off current source
 
