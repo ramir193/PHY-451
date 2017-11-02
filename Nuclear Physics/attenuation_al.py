@@ -9,8 +9,8 @@ from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def f(x,a,mu,b):
-    return a*np.exp(mu*x)+b
+def f(x,a,mu):
+    return a*np.exp(mu*x)
 
 with open("Attenuation_Data.csv") as infile:
     elements = ('Pb', 'Al')
@@ -20,7 +20,6 @@ with open("Attenuation_Data.csv") as infile:
     x_array = np.array(df['Al thickness (mm)'])
     #x_array_2 = np.array(df['Al thickness (mm)'])
     y_array = np.array(df['Al Counts'])
-    #print(x_array,y_array)
     #y_array_2 = np.array(df['Al Counts'])
     y_error = np.array(df['Al Counts Uncertainty'])
     #y_error_2 = np.array(df['Al Uncertainty'])
@@ -28,14 +27,15 @@ with open("Attenuation_Data.csv") as infile:
     #I_0_Al = y_array_2[0]
     popt,pcov = curve_fit(f,xdata=x_array,ydata=y_array) # optimal, covariance
     #popt2,pcov2 = curve_fit(f,xdata=x_array_2,ydata=y_array_2) # optimal, covariance    
-    a,mu,b = popt
+    a,mu = popt
+    print(a,mu)
     #a_2, mu_2 = popt2    
     fit_array = f(x_array,*popt)
     #fit_array_2 = f(x_array_2, *popt2)
     #plt.figure(1,figsize=(8,8))
     #plt.subplot(212)
-    #plt.errorbar(x_array, y_array, yerr=y_error, fmt='o',label="Data")
-    plt.plot(x_array, fit_array,color='r',label="y = {}*exp({}*x)+{}".format(I_0,round(mu,3),b))
+    plt.errorbar(x_array, y_array, yerr=y_error, fmt='o',label="Data")
+    #plt.plot(x_array, fit_array,color='r',label="y = {}*exp({}*x)".format(I_0,round(mu,3)))
     plt.ylabel("Counts")
     plt.xlabel("Al thickness (mm)")
     plt.title("Al thickness (mm) vs. Counts")

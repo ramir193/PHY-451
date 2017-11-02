@@ -1,0 +1,56 @@
+```{r}
+library(ggplot2)
+library(tidyverse)
+muon <- read.delim("muon-decay-events.data")
+```
+```{r}
+str(muon)
+```
+
+```{r}
+muon_split <- separate(data=muon, col = X260.1508858711, into=c("decay", "time"),sep = " ", remove = TRUE)
+```
+```{r}
+muon_split <- muon_split %>% mutate_if(is.character, as.integer)
+muon_split
+```
+
+```{r}
+muon_split$time <- muon_split$time - min(muon_split$time)
+muon_split$log_decay <- log(muon_split$decay)
+muon_split$log_time <- log(muon_split$time)
+muon_split$log_time[1] <- 0
+muon_split
+
+
+```
+```{r}
+write.csv(x = muon_split,file = "muon_decays.csv")
+```
+
+
+
+```{r}
+ggplot(muon_split,aes(x=time),stat="count") + geom_histogram()
+
+```
+```{r}
+base_hist <- ggplot(muon_split,aes(x=decay),stat="count") + geom_histogram(binwidth = 20,bins=length(unique(muon_split$decay)))# + geom_smooth(y~exp(x))
+```
+```{r}
+base_hist
+```
+
+```{r}
+lm(decay~exp(time),data=muon_split)
+```
+```{r}
+loglog_coef = coef(lm(log_decay ~ log_time, data = muon_split))
+
+```
+
+
+```{r}
+
+```
+
