@@ -19,7 +19,8 @@ from scipy.stats import expon
 
 def f(t,tau,N0):
     return N0*np.exp(t/tau)
-
+def h(t,l):
+    return l*np.exp(-l*t)
 def g(m,x,b):
     return m*x+b
     
@@ -29,18 +30,29 @@ with open("muon_decays.csv") as infile:
     n_array = np.array(df["decay"],dtype=int)
     log_decay_array = np.array(df["log_decay"],dtype=float)
     log_time_array = np.array(df["log_time"],dtype=float)
-    #popt_log, pcov_log = curve_fit(g,xdata=log_time_array,ydata=log_decay_array)
-    plt.hist(x=n_array,bins=len(set(n_array)))
-    
+    popt_log, pcov_log = curve_fit(g,xdata=log_time_array,ydata=log_decay_array)
+    #plt.hist(x=n_array,bins=len(set(n_array)))
+    #print(decay_time_bins)
     hist, bin_edges = np.histogram(n_array,bins=len(set(n_array)))
-    #print(len(hist))
-    #plt.scatter(bin_edges,hist)
-    #popt, pcov = curve_fit(f,xdata=)
-    plt.xlabel("Time in between decays (ns)")
-    plt.ylabel("Frequency")
-    plt.savefig("muon_histogram_decaytimes.png")
-    plt.title("Frequency of number of muon decays")
-    #log_fit_array = g(popt_log[0],t_array,popt_log[1])
+    decay_time_bins = np.linspace(0, max(n_array), len(hist))
+    #plt.plot(g(x=t_array,*popt_log))
+    popt, pcov = curve_fit(h,xdata=decay_time_bins,ydata=hist)
+    #print(decay_time_bins)
+    #plt.xlabel("Time in between decays (ns)")
+    #plt.ylabel("Frequency")
+    #plt.scatter(x=decay_time_bins,y=hist)
+    #plt.plot(h(np.arange(0,10000),*popt))
+    #plt.xlim(0,10000)
+    #plt.ylim(0,150)
+    plt.xlabel("time (s)")
+    print(popt_log)
+    plt.ylabel("Log(Decay times)")
+    #plt.title("Frequency of number of muon decays")
+    plt.title("Log-linear fit for Log(decay times) vs. time (s)")
+    log_fit_array = g(popt_log[0],t_array,popt_log[1])
+    plt.plot(log_fit_array)
+    plt.savefig("muon_loglinear_fit.png")
+
     #popt, pcov = curve_fit(f,xdata)
     #plt.plot(hist)
     #print(len(hist),len(t_array))
